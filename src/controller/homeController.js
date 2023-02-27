@@ -7,7 +7,7 @@ const getHomePage = async (req, res) => {
 
     res.render('home.ejs', { data: JSON.stringify(data) })
   } catch (e) {
-    console.log()
+    console.log(e)
   }
 }
 
