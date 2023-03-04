@@ -1,5 +1,5 @@
-import express from "express"
 import db from '../models/index'
+import crudService from '../service/crudService'
 
 const getHomePage = async (req, res) => {
   try {
@@ -11,6 +11,18 @@ const getHomePage = async (req, res) => {
   }
 }
 
+const getCRUD = (req, res) => {
+  res.render('crud.ejs')
+}
+
+const postCRUD = async (req, res) => {
+  let message = await crudService.createNewUser(req.body)
+  console.log(message)
+  res.send('post crud ' + JSON.stringify(req.body))
+}
+
 module.exports = {
-  getHomePage
+  getHomePage,
+  getCRUD,
+  postCRUD,
 }
