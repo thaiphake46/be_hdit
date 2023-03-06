@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>get crud</title>
+  </head>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    table {
+      width: 100%;
+      font-size: 18px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 4px;
+    }
+  </style>
+
+  <body>
+    <h1>get crud</h1>
+    <table>
+      <tr>
+        <th>Email</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Address</th>
+      </tr>
+
+      <% for(let i=0; i < dataUser.length; i++) { %>
+      <tr>
+        <td><%= dataUser[i].email %></td>
+        <td><%= dataUser[i].firstName %></td>
+        <td><%= dataUser[i].lastName %></td>
+        <td><%= dataUser[i].address %></td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
