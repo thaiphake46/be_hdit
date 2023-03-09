@@ -30,6 +30,36 @@
     td {
       padding: 4px;
     }
+
+    tr:first-child {
+      background-color: #555;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ddd;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    button {
+      display: inline-block;
+      border: none;
+      background-color: #fff;
+      margin-right: 5px;
+      padding: 5px;
+    }
+
+    button:hover a {
+      color: #fff;
+    }
+    button:hover {
+      color: #fff;
+      background-color: #333;
+    }
   </style>
 
   <body>
@@ -40,6 +70,7 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Address</th>
+        <th>Action</th>
       </tr>
 
       <% for(let i=0; i < dataUser.length; i++) { %>
@@ -48,6 +79,11 @@
         <td><%= dataUser[i].firstName %></td>
         <td><%= dataUser[i].lastName %></td>
         <td><%= dataUser[i].address %></td>
+        <td>
+          <button><a href="">Detail</a></button>
+          <button><a href="/edit-crud?id=<%=dataUser[i].id%>">Edit</a></button>
+          <button><a href="">Delete</a></button>
+        </td>
       </tr>
       <% } %>
     </table>

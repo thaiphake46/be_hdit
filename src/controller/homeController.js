@@ -26,9 +26,26 @@ const displayGetCRUD = async (req, res) => {
   res.render('displayCRUD.ejs', { dataUser: data })
 }
 
+const displayEditCRUD = async (req, res) => {
+  let idUser = req.query.id
+  if (!idUser) {
+    return res.send('user not found')
+  }
+  let infoUser = await crudService.getInfoUserById(idUser)
+  return res.render('editCRUD.ejs', { infoUser: infoUser })
+}
+
+const patchCRUD = async (req, res) => {
+  let formData = req.body
+  await crudService.updateUserData(formData)
+  res.redirect('/get-crud')
+}
+
 module.exports = {
   getHomePage,
   getCRUD,
   postCRUD,
   displayGetCRUD,
+  displayEditCRUD,
+  patchCRUD
 }
