@@ -60,10 +60,18 @@
       color: #fff;
       background-color: #333;
     }
+
+    .create-new-user {
+      border: 1px solid #000;
+      padding: 5px;
+      margin: 5px;
+      font-size: 18px;
+    }
   </style>
 
   <body>
     <h1>get crud</h1>
+    <button class="create-new-user"><a href="/crud">create new user</a></button>
     <table>
       <tr>
         <th>Email</th>
@@ -82,7 +90,9 @@
         <td>
           <button><a href="">Detail</a></button>
           <button><a href="/edit-crud?id=<%=dataUser[i].id%>">Edit</a></button>
-          <button><a href="">Delete</a></button>
+          <button>
+            <a href="/delete-crud?id=<%=dataUser[i].id%>">Delete</a>
+          </button>
         </td>
       </tr>
       <% } %>
